@@ -1,0 +1,50 @@
+name: Pylint
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.8
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pylint
+    - name: Analysing the code with pylint
+      run: |
+        pylint `ls -R|grep .py$|xargs`
+class Men:
+    def __init__(self,x1,x2):
+       self.x1 = x1 
+       self.x2 = x2
+       print('ok')
+    def yumen(self):
+        y = self.x1 + self.x2 - 1
+        if y <= 0:
+            return 0
+        if y > 0:
+            return 1
+    def yufeimen(self):
+        y = self.x1 + self.x2 - 1
+        if y <= 0:
+            return 1
+        if y > 0:
+            return 0
+    def huomen(self):
+        y = self.x1 + self.x2 - 1
+        if y >= 0:
+            return 1
+        if y < 0:
+            return 0
+    def yihuomen(self):
+        s1 = Men.yufeimen(self)
+        s2 = Men.huomen(self)
+        res = yumen(s1,s2)
+        return res
