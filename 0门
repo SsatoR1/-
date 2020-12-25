@@ -1,0 +1,28 @@
+class Men:
+    def __init__(self,x1,x2):
+       self.x1 = x1 
+       self.x2 = x2
+       print('ok')
+    def yumen(self):
+        y = self.x1 + self.x2 - 1
+        if y <= 0:
+            return 0
+        if y > 0:
+            return 1
+    def yufeimen(self):
+        y = self.x1 + self.x2 - 1
+        if y <= 0:
+            return 1
+        if y > 0:
+            return 0
+    def huomen(self):
+        y = self.x1 + self.x2 - 1
+        if y >= 0:
+            return 1
+        if y < 0:
+            return 0
+    def yihuomen(self):
+        s1 = Men.yufeimen(self)
+        s2 = Men.huomen(self)
+        res = yumen(s1,s2)
+        return res
